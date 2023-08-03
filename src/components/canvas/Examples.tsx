@@ -6,6 +6,8 @@ import * as THREE from 'three'
 import { useMemo, useRef, useState } from 'react'
 import { Line, useCursor, MeshDistortMaterial } from '@react-three/drei'
 import { useRouter } from 'next/navigation'
+import Building from '@/components/canvas/Building'
+import { Vector3 } from 'three'
 
 export const Blob = ({ route = '/', ...props }) => {
   const router = useRouter()
@@ -16,7 +18,8 @@ export const Blob = ({ route = '/', ...props }) => {
       onClick={() => router.push(route)}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}
-      {...props}>
+      {...props}
+    >
       <sphereGeometry args={[1, 64, 64]} />
       <MeshDistortMaterial roughness={0} color={hovered ? 'hotpink' : '#1fb2f5'} />
     </mesh>
@@ -61,8 +64,42 @@ export function Duck(props) {
 
   return <primitive object={scene} {...props} />
 }
+
 export function Dog(props) {
   const { scene } = useGLTF('/dog.glb')
 
   return <primitive object={scene} {...props} />
+}
+
+interface ICity {
+  handleOnBuildingClick: (buildingName: string, position: Vector3) => void
+  props: any
+}
+export function B11(props) {
+  const { scene } = useGLTF('/B11.glb')
+
+  return (
+    <mesh>
+      <primitive object={scene} {...props} />
+    </mesh>
+  )
+}
+
+export function B12(props) {
+  const { scene } = useGLTF('/B12.glb')
+
+  return (
+    <mesh>
+      <primitive object={scene} {...props} />
+    </mesh>
+  )
+}
+export function B13(props) {
+  const { scene } = useGLTF('/B13.glb')
+
+  return (
+    <mesh>
+      <primitive object={scene} {...props} />
+    </mesh>
+  )
 }
