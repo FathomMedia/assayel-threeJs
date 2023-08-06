@@ -1414,7 +1414,7 @@
   "resolved" "https://registry.npmjs.org/@types/stats.js/-/stats.js-0.17.0.tgz"
   "version" "0.17.0"
 
-"@types/three@>=0.144.0":
+"@types/three@^0.155.0", "@types/three@>=0.144.0":
   "integrity" "sha512-IzdbqXsGsbG0flvq9D5L9pZRwySQQps2bGcizLYEsfvK3dM+B0sqKR6S+xAOXbouXemfDmHttrcQjVOM46YnAw=="
   "resolved" "https://registry.npmjs.org/@types/three/-/three-0.155.0.tgz"
   "version" "0.155.0"
