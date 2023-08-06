@@ -1,11 +1,11 @@
 'use client'
 
-import { useRef } from 'react'
+import { FC, PropsWithChildren, useRef } from 'react'
 import dynamic from 'next/dynamic'
 const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: false })
 
-const Layout = ({ children }) => {
-  const ref = useRef()
+const Layout: FC<PropsWithChildren> = ({ children }) => {
+  const ref = useRef(null)
 
   return (
     <div

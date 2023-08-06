@@ -21,8 +21,8 @@ export const Mall = () => {
   function handleBuildingClick(building: GLTF) {
     const target = building.scene.children[0]
 
-    const rotation = cameraControlRef.current.camera.rotation
-    cameraControlRef.current.setLookAt(
+    const rotation = cameraControlRef.current?.camera.rotation
+    cameraControlRef.current?.setLookAt(
       target.position.x + 50,
       target.position.y + 50,
       target.position.z + 50,
@@ -31,7 +31,7 @@ export const Mall = () => {
       target.position.z,
       true,
     )
-    cameraControlRef.current.camera.setRotationFromEuler(rotation)
+    rotation && cameraControlRef.current?.camera.setRotationFromEuler(rotation)
   }
 
   useEffect(() => {
