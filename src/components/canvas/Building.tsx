@@ -14,6 +14,7 @@ export default function Building({ url, onBuildingClick }: IBuilding) {
   const [hover, setHover] = useState(false)
   const meshRef = useRef<Mesh>(null!)
 
+  // rotation of the marker
   useFrame((state, delta) => {
     meshRef.current.rotation.y += delta
     meshRef.current.rotation.x += delta
@@ -35,6 +36,7 @@ export default function Building({ url, onBuildingClick }: IBuilding) {
         <primitive object={obj.scene} />
       </mesh>
       {
+        // position of the marker
         <mesh
           ref={meshRef}
           position={[
